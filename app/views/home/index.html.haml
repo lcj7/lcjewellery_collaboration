@@ -1,0 +1,15 @@
+= link_to "New Meeting", new_meeting_path
+
+%fieldset
+  %legend Meetings
+
+  %table
+    %thead
+      %tr
+        %th Meeting Session ID
+        %th
+    %tbody
+      - @meetings.each do |meeting|
+        %tr
+          %td= link_to meeting.name, join_meeting_path(meeting)
+          %td= link_to "Remove Meeting", meeting_path(meeting), method: :delete
