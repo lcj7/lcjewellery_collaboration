@@ -1,12 +1,12 @@
 class MeetingsController < ApplicationController
-  API_KEY = '23300482'.freeze
+  respond_to :html
 
   def new
     @meeting = Meeting.new
   end
 
   def create
-    session = opentok.createSession(request.ip)
+    session = opentok.create_session(request.ip)
     @meeting = Meeting.new(params[:meeting].merge({session_ident: session.session_id}))
 
     if @meeting.save
@@ -19,10 +19,10 @@ class MeetingsController < ApplicationController
   end
 
   def join
-    @api_key = API_KEY
+    @api_key = MyOpenTok::API_KEY
     @meeting = Meeting.find(params[:id])
 
-    @token = opentok.generateToken session_id: @meeting.session_ident
+    @token = opentok.generate_token(@meeting.session_ident)
   end
 
   def destroy
@@ -32,9 +32,7 @@ class MeetingsController < ApplicationController
   end
 
 private
-
   def opentok
-    @opentok ||= OpenTok::OpenTokSDK.new API_KEY, '55f3cbd9ba275405d8dbaa7307611dfcb9f60a78'
+    @opentok ||= MyOpenTok.new
   end
-
 end
