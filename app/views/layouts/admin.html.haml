@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag "application", media: :all
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = javascript_include_tag "http://static.opentok.com/v1.1/js/TB.min.js"
+    = javascript_include_tag "application"
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    = csrf_meta_tags
+
+  %title= content_for?(:title) ? yield(:title) : "LCJewellery Collaboration"
+  = favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '144x144'
+  %body
+    %title Regulation Zone Tool
+    %body
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target"=>".nav-collapse", style: "margin-right: 25px;"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .nav-collapse
+              %ul.nav
+                %li= link_to "Home", admin_root_path
+                / %li= link_to "Service Requests", admin_service_requests_path
+                / %li= link_to "Recipients", admin_recipients_path
+                / %li.offset4= link_to "Log Out", destroy_user_session_path, method: :delete
+
+    .container
+      - if flash[:notice]
+        .alert
+          = flash[:notice]
+      - if flash[:error] && @errors
+        .alert.alert-error
+          = flash[:error]
+          %ul
+            - @errors.full_messages.each do |error|
+              %li= error
+
+      = yield

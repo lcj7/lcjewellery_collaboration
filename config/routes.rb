@@ -6,6 +6,10 @@ LcjewelleryCollaboration::Application.routes.draw do
       get :join
     end
   end
+
+  namespace :admin do
+    root to: "admin#index"
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
