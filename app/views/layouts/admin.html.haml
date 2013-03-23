@@ -1,5 +1,5 @@
 !!!
-%html
+%html#admin
   %head
     = stylesheet_link_tag "application", media: :all
     /[if lt IE 9]
@@ -24,10 +24,6 @@
             .nav-collapse
               %ul.nav
                 %li= link_to "Home", admin_root_path
-                / %li= link_to "Service Requests", admin_service_requests_path
-                / %li= link_to "Recipients", admin_recipients_path
-                / %li.offset4= link_to "Log Out", destroy_user_session_path, method: :delete
-
     .container
       - if flash[:notice]
         .alert

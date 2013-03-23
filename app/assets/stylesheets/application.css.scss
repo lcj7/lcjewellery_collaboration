@@ -13,10 +13,12 @@
  *= require bootstrap_and_overrides
  */
 
-
  html, body {
    height: 100%;
-   padding-top: 30px;
+ }
+
+ #admin {
+  padding-top: 60px;
  }
 
  #wrap {
@@ -26,4 +28,10 @@
  #main {
    overflow:auto;
    padding-bottom:150px; /* this needs to be bigger than footer height*/
+ }
+
+ table td {
+    a {
+      padding-right: 5px;
+    }
  }

@@ -1,7 +1,8 @@
 LcjewelleryCollaboration::Application.routes.draw do
   root to: 'home#index'
 
-  resources :meetings do
+
+  resources :meetings, only: [] do
     member do
       get :join
     end
@@ -9,6 +10,8 @@ LcjewelleryCollaboration::Application.routes.draw do
 
   namespace :admin do
     root to: "admin#index"
+
+    resources :meetings
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

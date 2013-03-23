@@ -10,7 +10,9 @@
       - meetings.each do |meeting|
         %tr
           %td
-            = link_to meeting_path(meeting), method: :delete, confirm: "Are you sure?" do
+            = link_to edit_admin_meeting_path(meeting) do
+              %i.icon-pencil
+            = link_to admin_meeting_path(meeting), method: :delete, confirm: "Are you sure?" do
               %i.icon-trash
           %td
             = link_to meeting.name, join_meeting_path(meeting)
