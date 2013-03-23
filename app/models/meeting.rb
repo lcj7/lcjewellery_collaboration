@@ -20,13 +20,5 @@ class Meeting < ActiveRecord::Base
   validates :name, length: { maximum: 255 }, presence: true
   validates :password, length: { maximum: 255 }
   validates_confirmation_of :password
-
-  validate :password_if_locked
-
-  private
-
-  def password_if_locked
-    errors.add(:password, "required for locking a meeting") if is_locked
-  end
-
+  validates_presence_of :password, if: :is_locked
 end

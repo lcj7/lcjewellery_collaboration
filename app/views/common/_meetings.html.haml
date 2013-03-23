@@ -5,7 +5,7 @@
     %thead
       %tr
         %th
-        %th Meeting Session ID
+        %th Meeting Session Name
     %tbody
       - meetings.each do |meeting|
         %tr
@@ -16,3 +16,5 @@
               %i.icon-trash
           %td
             = link_to meeting.name, join_meeting_path(meeting)
+            - if meeting.is_locked
+              %i.icon-lock
