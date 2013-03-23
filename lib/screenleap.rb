@@ -5,9 +5,12 @@ require 'uri'
 class Screenleap
   attr_reader :account_id, :auth_token, :uri
 
-  def initialize(account_id, auth_token)
-    @account_id = account_id
-    @auth_token = auth_token
+  ACCOUNT_ID = 'lcj7'.freeze
+  AUTH_TOKEN = 'vazyEVyAGF'.freeze
+
+  def initialize
+    @account_id = ACCOUNT_ID
+    @auth_token = AUTH_TOKEN
   end
 
   def start_presenting
