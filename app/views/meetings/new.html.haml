@@ -4,7 +4,16 @@
     = f.label :name
     = f.text_field :name
 
-    = f.label :max_size, "Number of people allowed in meeting: (max 4)"
-    = f.text_field :max_size
+    = f.label :is_locked, class: "checkbox" do
+      Is the meeting locked?
+      = f.check_box :is_locked
+
+    = f.label :password
+    = f.text_field :password
+
+    = f.label :password_confirmation
+    = f.text_field :password_confirmation
+    / = f.label :max_size, "Number of people allowed in meeting: (max 4)"
+    / = f.text_field :max_size
     %br
     = f.submit "Create Room", class: :btn
