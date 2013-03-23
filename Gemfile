@@ -8,6 +8,7 @@ gem "twitter-bootstrap-rails"
 gem "less-rails"
 gem 'opentok'
 gem 'haml'
+gem 'annotate'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +30,5 @@ group :test do
   gem 'forgery'
   gem "shoulda-matchers", "= 1.4.1"
 end
-
 
 gem 'rspec-rails', group: [:development, :test]
