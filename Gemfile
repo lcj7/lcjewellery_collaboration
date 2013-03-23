@@ -27,11 +27,7 @@ group :test do
   gem 'annotate'
   gem 'rr'
   gem 'forgery'
-  # This changes when shoulda-matchers 2.0 comes out
-  gem "bourne", ">= 1.4.0"
-  gem "shoulda"
-  gem "shoulda-matchers", github: "thoughtbot/shoulda-matchers", branch: "dc-bourne-dependency"
-# END
+  gem "shoulda-matchers", "= 1.4.1"
 end
 
 

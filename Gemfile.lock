@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/thoughtbot/shoulda-matchers.git
-  revision: c88b2854ca516263b612e6ceb874347789658ca1
-  branch: dc-bourne-dependency
-  specs:
-    shoulda-matchers (1.5.0)
-      activesupport (>= 3.0.0)
-      bourne (~> 1.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,8 +31,6 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
-    bourne (1.4.0)
-      mocha (~> 0.13.2)
     builder (3.0.4)
     capistrano (2.9.0)
       highline
@@ -81,10 +70,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    metaclass (0.0.1)
     mime-types (1.21)
-    mocha (0.13.3)
-      metaclass (~> 0.0.1)
     multi_json (1.7.1)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -142,10 +128,8 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    shoulda (3.4.0)
-      shoulda-context (~> 1.0, >= 1.0.1)
-      shoulda-matchers (~> 1.0, >= 1.4.1)
-    shoulda-context (1.0.2)
+    shoulda-matchers (1.4.1)
+      activesupport (>= 3.0.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -177,7 +161,6 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bourne (>= 1.4.0)
   capistrano (= 2.9.0)
   factory_girl_rails
   forgery
@@ -191,8 +174,7 @@ DEPENDENCIES
   rspec-rails
   rvm-capistrano (= 1.1.0)
   sass-rails (~> 3.2.3)
-  shoulda
-  shoulda-matchers!
+  shoulda-matchers (= 1.4.1)
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
