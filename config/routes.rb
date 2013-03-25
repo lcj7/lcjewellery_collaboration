@@ -1,10 +1,12 @@
 LcjewelleryCollaboration::Application.routes.draw do
   root to: 'home#index'
 
+  get "unauthorized" => "home#unauthorized"
 
   resources :meetings, only: [] do
     member do
-      get :join
+      get :enter_password
+      post :join
     end
   end
 
