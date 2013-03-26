@@ -17,8 +17,10 @@ class MeetingsController < ApplicationController
   private
 
   def restrict
-    unless password_matches? && @meeting.is_locked
-      redirect_to unauthorized_path
+    if @meeting.is_locked
+      unless password_matches?
+        redirect_to unauthorized_path
+      end
     end
   end
 

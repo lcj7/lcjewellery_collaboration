@@ -6,6 +6,7 @@ LcjewelleryCollaboration::Application.routes.draw do
   resources :meetings, only: [] do
     member do
       get :enter_password
+      get :join
       post :join
     end
   end
