@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'pg'
@@ -9,6 +9,7 @@ gem "less-rails"
 gem 'opentok'
 gem 'haml'
 gem 'annotate'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.

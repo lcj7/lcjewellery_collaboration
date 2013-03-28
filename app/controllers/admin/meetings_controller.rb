@@ -1,5 +1,7 @@
 module Admin
   class MeetingsController < ApplicationController
+    before_filter :authenticate_user!
+
     respond_to :html
 
     def new
@@ -43,7 +45,6 @@ module Admin
     end
 
     private
-
       def opentok
         @opentok ||= MyOpenTok.new
       end
