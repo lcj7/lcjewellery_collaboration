@@ -1,6 +1,10 @@
 .wrap
   %div{id: "main", class: "container clear-top"}
 
+  = @applet.html_safe
+
+  %iframe{src: @viewerUrl + "&resize=fit", width: 500, height: 500}
+
 %div{class: "navbar navbar-fixed-bottom"}
   #publisher1{style: "float: left;"}
   #publisher2{style: "float: right;"}

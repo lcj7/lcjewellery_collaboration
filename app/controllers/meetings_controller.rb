@@ -11,6 +11,10 @@ class MeetingsController < ApplicationController
     @api_key = MyOpenTok::API_KEY
     @token = MyOpenTok.new.generate_token(@meeting.session_ident)
 
+    @json = Screenleap.new.start_presenting
+    @applet = @json["appletHtml"]
+
+    @viewerUrl = @json["viewerUrl"]
     render :join
   end
 

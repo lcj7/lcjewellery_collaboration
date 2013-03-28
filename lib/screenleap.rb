@@ -17,20 +17,20 @@ class Screenleap
     start_presenter_session
   end
 
-  def stop_presenting
-    stop_presenter_session
+  def stop_presenting(share_code)
+    stop_presenter_session(share_code)
   end
 
   private
 
   def start_presenter_session
-    @uri = URI.parse('https://api.screenleap.com/v1/screen-shares')
+    @uri = URI.parse('http://api.screenleap.com/v1/screen-shares')
 
     perform_request
   end
 
   def stop_presenter_session(share_code)
-    @uri = URI.parse("https://api.screenleap.com/v1/screen-shares/#{share_code}/stop")
+    @uri = URI.parse("http://api.screenleap.com/v1/screen-shares/#{share_code}/stop")
 
     perform_request
   end
