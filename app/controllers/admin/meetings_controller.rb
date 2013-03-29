@@ -18,7 +18,7 @@ module Admin
       @meeting.presentation = Screenleap.new.start_presenting
 
       if @meeting.save
-        redirect_to join_meeting_path(@meeting)
+        redirect_to join_meeting_path(@meeting, password: @meeting.password)
       else
         flash[:error] = "There was a problem"
         @errors = @meeting.errors
