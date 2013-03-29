@@ -15,6 +15,7 @@ module Admin
     def create
       session = opentok.create_session(request.ip)
       @meeting = Meeting.new(params[:meeting].merge({session_ident: session.session_id, max_size: 2}))
+      @meeting.presentation = Screenleap.new.start_presenting
 
       if @meeting.save
         redirect_to join_meeting_path(@meeting)
@@ -40,6 +41,8 @@ module Admin
 
     def destroy
       Meeting.find(params[:id]).destroy
+
+      flash[:notice] = "Meeting successfully deleted."
 
       redirect_to admin_root_path
     end

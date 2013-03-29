@@ -26,7 +26,16 @@ class Screenleap
   def start_presenter_session
     @uri = URI.parse('http://api.screenleap.com/v1/screen-shares')
 
-    perform_request
+    request_result = perform_request
+
+    Presentation.new(
+                      {
+                        viewer_url: request_result['viewerUrl'],
+                        share_code: request_result['screenShareCode'],
+                        applet_html: request_result['appletHtml'],
+                        participant_id: request_result['participantId']
+                      }
+                    )
   end
 
   def stop_presenter_session(share_code)

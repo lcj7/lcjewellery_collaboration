@@ -13,16 +13,8 @@
  *= require bootstrap_and_overrides
  */
 
- html, body {
-   height: 100%;
- }
-
- #admin {
-  padding-top: 60px;
- }
-
- #wrap {
-   min-height: 100%;
+ html {
+  padding-top: 50px;
  }
 
  #main {

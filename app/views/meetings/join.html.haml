@@ -1,9 +1,13 @@
-.wrap
-  %div{id: "main", class: "container clear-top"}
+%div{id: "main", class: "container-fluid clear-top"}
+  %div{class: "container-fluid"}
+    - if @meeting.presentation_viewer_url
+      %iframe{src: @meeting.presentation_viewer_url, width: "100%", height: 600}
+    - else
+      %h2 No Screen Share Available At The Moment
 
-  = @applet.html_safe
+- if current_user
+  = @meeting.presentation_applet_html
 
-  %iframe{src: @viewerUrl + "&resize=fit", width: 500, height: 500}
 
 %div{class: "navbar navbar-fixed-bottom"}
   #publisher1{style: "float: left;"}

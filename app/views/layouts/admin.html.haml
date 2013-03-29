@@ -1,5 +1,5 @@
 !!!
-%html#admin
+%html
   %head
     = stylesheet_link_tag "application", media: :all
     /[if lt IE 9]
@@ -12,7 +12,7 @@
   %title= content_for?(:title) ? yield(:title) : "LCJewellery Collaboration"
   = favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png', sizes: '144x144'
   %body
-    %title Regulation Zone Tool
+    %title LCJewellery Collaboration Administration
     %body
       .navbar.navbar-fixed-top
         .navbar-inner
@@ -23,7 +23,7 @@
               %span.icon-bar
             .nav-collapse
               %ul.nav
-                %li= link_to "Home", admin_root_path
+                %li= link_to "LCJewellery Collaboration Administration", admin_root_path
                 %li= link_to "Log Out", destroy_user_session_path, :method => :delete
     .container
       - if flash[:notice]

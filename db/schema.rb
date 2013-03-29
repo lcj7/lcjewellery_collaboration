@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328140009) do
+ActiveRecord::Schema.define(:version => 20130329131614) do
 
   create_table "meetings", :force => true do |t|
     t.datetime "created_at",                       :null => false
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(:version => 20130328140009) do
     t.integer  "max_size"
     t.integer  "current_size"
     t.string   "password"
+  end
+
+  create_table "presentations", :force => true do |t|
+    t.integer  "meeting_id"
+    t.string   "viewer_url"
+    t.string   "share_code"
+    t.text     "applet_html"
+    t.string   "participant_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
