@@ -10,13 +10,12 @@
 
 
 %div{class: "navbar navbar-fixed-bottom"}
-  #publisher1{style: "float: left;"}
-  #publisher2{style: "float: right;"}
+  #session{"data-session-ident" => "#{@meeting.session_ident}"}
+    #publisher1{style: "float: left;"}
+    #publisher2{style: "float: right;"}
 
 :javascript
-  var session = TB.initSession("#{@meeting.session_ident}");
-  session.addEventListener('sessionConnected', sessionConnectedHandler);
-  session.addEventListener("streamCreated", streamCreatedHandler);
-  session.addEventListener('streamDestroyed', streamDestroyedHandler);
-
-  session.connect("#{@api_key}", "#{@token}");
+  $(document).ready(function() {
+    initSession();
+    connectSession("#{@api_key}", "#{@token}");
+  });
