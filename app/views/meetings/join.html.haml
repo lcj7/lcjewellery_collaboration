@@ -1,9 +1,9 @@
 %div{id: "main", class: "container-fluid clear-top"}
   %div{class: "container-fluid"}
     - if @meeting.presentation_viewer_url
-      %iframe{src: @meeting.presentation_viewer_url, width: "100%", height: 600, class: :preview}
+      %iframe{src: @meeting.presentation_viewer_url, width: "100%", height: 550, class: :preview}
       - if current_user
-        = link_to "Hide Preview", "", class: :hide_preview
+        .offset5= link_to "Hide Preview", "", class: :hide_preview
     - else
       %h2 No Screen Share Available At The Moment
 
