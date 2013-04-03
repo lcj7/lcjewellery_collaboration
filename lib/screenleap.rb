@@ -5,8 +5,8 @@ require 'uri'
 class Screenleap
   attr_reader :account_id, :auth_token, :uri
 
-  ACCOUNT_ID = 'lcj7'.freeze
-  AUTH_TOKEN = 'vazyEVyAGF'.freeze
+  ACCOUNT_ID = 'lcjewelleryCollaboration'.freeze
+  AUTH_TOKEN = 'YfWVIZCPVJ'.freeze
 
   def initialize
     @account_id = ACCOUNT_ID

@@ -1,8 +1,8 @@
 class MyOpenTok
   attr_reader :opentok
 
-  API_KEY = '23300482'.freeze
-  API_SECRET = '55f3cbd9ba275405d8dbaa7307611dfcb9f60a78'.freeze
+  API_KEY = '24997742'.freeze
+  API_SECRET = '9b6ce15af724472873beb9187144d477f5c9a180'.freeze
 
   def initialize
     @opentok = OpenTok::OpenTokSDK.new(API_KEY, API_SECRET)
